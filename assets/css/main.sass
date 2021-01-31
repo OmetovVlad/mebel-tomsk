@@ -3,7 +3,8 @@
 body
 	background: #ccc
 	font-family: 'Open Sans', sans-serif
-
+	font-weight: 300
+	line-height: 1.5
 	*
 		outline: none !important
 		box-sizing: border-box
@@ -12,12 +13,44 @@ body
 	a
 		text-decoration: none
 
+.button
+	color: #fff
+	background-color: #43ab92
+	border: 0
+	display: inline-block
+	padding: 12px 20px
+	font-size: 14px
+	line-height: 1
+	font-weight: 400
+
 .header
 	position: fixed
 	top: 0
 	left: 0
 	right: 0
 	background: #fff
+	z-index: 9
+	&:before
+		content: ""
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: #00000080
+		opacity: 0
+		z-index: 99
+		pointer-events: none
+		transition: all 0.15s ease-in-out
+	
+	@media (max-width: 991px)
+		&.open
+			&:before
+				opacity: 1
+				pointer-events: auto
+			.menu
+				nav
+					transform: translate(0, 0)
 	.menu
 		position: relative
 		height: 80px
@@ -42,9 +75,9 @@ body
 				display: block
 				position: absolute
 				top: 0
-				right: 0
+				right: -15px
 				bottom: 0
-				padding: 27px 5px
+				padding: 27px 15px
 				span
 					display: block
 					width: 26px
@@ -63,21 +96,23 @@ body
 				bottom: 0
 				background: #fff
 				width: 280px
-				display: none
+				z-index: 999
+				transform: translate(100%, 0)
+				transition: all 0.15s ease-in-out
 			.close_menu
 				display: none
 				@media (max-width: 991px)
 					display: block
-					width: 24px
-					height: 24px
+					width: 40px
+					height: 40px
 					position: absolute
-					right: 10px
-					top: 10px
+					right: 0
+					top: 0
 					span
 						display: block
 						line-height: 1
-						font-size: 20px
-						line-height: 24px
+						font-size: 26px
+						line-height: 40px
 						text-align: center
 						opacity: 0.5
 			.left
@@ -106,6 +141,61 @@ body
 						line-height: 1.75
 						padding: 10px 30px
 
+.banner
+	margin-top: 80px
+	height: calc(100vh - 80px)
+	height: calc( (var(--vh, 1vh) * 100) - 80px)
+    position: relative
+	.banner-slider
+		height: 100%
+		.photo
+			height: calc(100vh - 80px)
+			height: calc( (var(--vh, 1vh) * 100) - 80px)
+			background-size: cover
+			background-position: center
+
+	.text-slider
+		z-index: 2
+		background: #fff
+		padding: 60px
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		width: calc(100% - 30px)
+		max-width: 500px
+		pointer-events: none
+		@media (max-width: 575px)
+			padding: 30px
+		h2
+			margin: 0
+			font-size: 36px
+			line-height: 1.33
+			font-weight: 300
+			text-transform: uppercase
+			color: #364d59
+			margin-bottom: 15px
+			@media (max-width: 575px)
+				font-size: 30px
+		p
+			margin: 0
+			font-weight: 300
+		.button_line
+			margin-top: 30px
+
 @media (min-width: 992px)
 	a
 		transition: all 0.15s ease-in-out
+
+
+.overflow
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: #00000080
+	opacity: 0
+	z-index: 99
+	pointer-events: none
+	transition: all 0.15s ease-in-out
