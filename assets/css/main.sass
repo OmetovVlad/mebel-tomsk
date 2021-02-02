@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap')
 
 body
-	background: #ccc
+	background: #d4d7dd
 	font-family: 'Open Sans', sans-serif
 	font-weight: 300
 	line-height: 1.5
+	color: #364d59
 	*
 		outline: none !important
 		box-sizing: border-box
@@ -12,6 +13,13 @@ body
 
 	a
 		text-decoration: none
+
+	h2
+		text-transform: uppercase
+		font-size: 20px
+		font-weight: 700
+		color: #000
+		line-height: 1.33
 
 .button
 	color: #fff
@@ -112,7 +120,7 @@ body
 						display: block
 						line-height: 1
 						font-size: 26px
-						line-height: 40px
+						line-height: 32px
 						text-align: center
 						opacity: 0.5
 			.left
@@ -141,6 +149,33 @@ body
 						line-height: 1.75
 						padding: 10px 30px
 
+.slick-dots
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	margin: 0
+	padding: 0
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 30px
+	li
+		list-style: none
+		display: block
+		button
+			display: block
+			padding: 0
+			margin: 0
+			border: 0
+			font-size: 0
+			width: 7px
+			height: 7px
+			margin: 3px
+			border-radius: 50%
+			background: #fff
+		&.slick-active
+			button
+				background: #43ab92
 .banner
 	margin-top: 80px
 	height: calc(100vh - 80px)
@@ -148,6 +183,7 @@ body
     position: relative
 	.banner-slider
 		height: 100%
+		position: relative
 		.photo
 			height: calc(100vh - 80px)
 			height: calc( (var(--vh, 1vh) * 100) - 80px)
@@ -164,10 +200,9 @@ body
 		transform: translate(-50%,-50%)
 		width: calc(100% - 30px)
 		max-width: 500px
-		pointer-events: none
 		@media (max-width: 575px)
 			padding: 30px
-		h2
+		h3
 			margin: 0
 			font-size: 36px
 			line-height: 1.33
@@ -183,8 +218,174 @@ body
 		.button_line
 			margin-top: 30px
 
+.title
+	padding-bottom: 30px
+	h2
+		font-weight: 700
+		font-size: 20px
+		color: #000
+		margin: 0
+		line-height: 1
+
+.about
+	padding: 80px 0
+	.content
+		display: flex
+		flex-wrap: wrap
+		position: relative
+		.about-text
+			padding: 60px
+			background: #fff
+			width: 350px
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translate(0, -50%)
+			z-index: 1
+			@media (max-width: 991px)
+				position: relative
+				width: 100%
+				left: 0
+				top: 0
+				transform: initial
+				padding: 40px 30px
+			h2
+				margin-top: 0
+				margin-bottom: 15px
+			*:last-child
+				margin-bottom: 0
+		.about-photo-slider
+			width: calc(100% - 300px)
+			margin-left: 300px
+			background: #ccc
+			@media (max-width: 991px)
+				width: 100%
+				margin-left: 0
+			.photo
+				width: 100%
+				padding-top: 100%
+				background-size: cover
+				background-position: center
+
+.catalog
+	padding: 80px 0
+	.content
+		display: flex
+		flex-wrap: wrap
+		position: relative
+		margin: 0 -15px
+		a
+			width: calc((100% - 60px) / 2)
+			position: relative
+			background: #fff
+			margin: 15px
+			@media (max-width: 575px)
+				width: 100%
+			.photo
+				width: 100%
+				position: relative
+				overflow: hidden
+				.bg
+					background-size: cover
+					background-position: center
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
+				&:before
+					content: ""
+					display: block
+					position: relative
+					width: 100%
+					padding-top: calc( 100% / 16 * 9 )
+			.text
+				padding: 30px 15px
+				text-align: center
+				@media (max-width: 991px)
+					padding: 15px
+				h3
+					margin: 0
+					font-size: 16px
+					color: #000
+					font-weight: 400
+					text-transform: uppercase
+			@media (min-width: 992px)
+				&:hover
+					.photo
+						.bg
+							transform: scale(1.1)
+					.text
+						h3
+							color: #43ab92
+
+.photo-block
+	padding: 80px 0
+	.content
+		display: flex
+		flex-wrap: wrap
+		position: relative
+		margin: 0 -15px
+		@media (max-width: 991px)
+			margin: 0
+		a
+			width: calc((100% - 60px) / 2)
+			position: relative
+			margin: 15px
+			@media (max-width: 991px)
+				width: 100%
+				margin: 0
+				& + a
+					margin-top: 30px
+			.photo
+				width: 100%
+				position: relative
+				img
+					display: block
+					width: 100%
+			.text
+				padding-top: 15px
+				h3
+					margin: 0
+					font-size: 16px
+					color: #000
+					font-weight: 400
+					text-transform: uppercase
+				span
+					color: #364d59
+					font-size: 14px
+			@media (min-width: 992px)
+				&:hover
+					.photo
+						img
+							margin-top: -15px
+							margin-bottom: 15px
+
+					.text
+						h3
+
+.footer
+	background: #c9ccd4
+	padding: 40px 0
+	.dev
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		a
+			opacity: 0.5
+			img
+				display: block
+			@media (min-width: 992px)
+				&:hover
+					opacity: 0.75
+							
+
 @media (min-width: 992px)
-	a
+	a,
+	.slick-dots li button,
+	.catalog .content a .photo .bg,
+	.catalog .content a .text h3,
+	.photo-block .content a .photo img
 		transition: all 0.15s ease-in-out
 
 

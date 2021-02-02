@@ -16,26 +16,12 @@ $(document).mouseup(function (e){ // событие клика по веб-до�
 	}
 });
 
-// $('.banner-slider').slick({
-// 	slidesToShow: 1,
-// 	slidesToScroll: 1,
-// 	arrows: false,
-// 	fade: true,
-// 	asNavFor: '.text-slider'
-// });
-
-// $('.text-slider').slick({
-// 	dots: false,
-// 	arrows: false,
-// 	infinite: true,
-// 	asNavFor: '.banner-slider',
-// 	focusOnSelect: true
-// });
 
 $('.banner-slider').slick({
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	arrows: false,
+	dots: true,
 	fade: true,
 	asNavFor: '.text-slider'
 });
@@ -47,4 +33,11 @@ $('.text-slider').slick({
 	dots: false,
 	centerMode: false,
 	focusOnSelect: true
+});
+
+$('.about-photo-slider').slick({
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	dots: true
 });
