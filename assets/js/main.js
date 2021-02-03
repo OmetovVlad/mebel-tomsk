@@ -9,6 +9,10 @@ $('.header').on( 'click', '.close_menu', function() {
 	$(this).parents('.header').removeClass('open');
 });
 
+$('.header').on( 'click', 'a', function() {
+	$(this).parents('.header').removeClass('open');
+});
+
 $(document).mouseup(function (e){ // событие клика по веб-документу
 	var div = $(".header .menu nav"); // тут указываем ID элемента
 	if (!div.is(e.target) && div.has(e.target).length === 0) {
@@ -41,3 +45,18 @@ $('.about-photo-slider').slick({
 	arrows: false,
 	dots: true
 });
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href').substr(1)
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
