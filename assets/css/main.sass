@@ -90,10 +90,11 @@ body
 			@media (max-width: 991px)
 				display: block
 				position: absolute
+				z-index: 1
 				top: 0
 				right: -15px
 				bottom: 0
-				padding: 27px 15px
+				padding: 26px 15px
 				span
 					display: block
 					width: 26px
@@ -164,6 +165,20 @@ body
 					@media (max-width: 991px)
 						line-height: 1.75
 						padding: 10px 30px
+
+			.button
+				display: none
+				@media (max-width: 575px)
+					display: block
+					text-align: center
+					width: calc(100% - 60px)
+
+		.button
+			margin-left: auto
+			display: block
+			margin: 21px auto
+			@media (max-width: 575px)
+				display: none
 
 .slick-dots
 	display: flex
